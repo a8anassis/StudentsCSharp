@@ -1,0 +1,36 @@
+﻿@page
+@model StudentsWebApp.Pages.Students.CreateModel
+@{
+}
+
+<h2 class="mb-3">New Student</h2>
+@if (!Model.ErrorMessage.Equals("")) {
+    <h2>@Model.ErrorMessage</h2>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label for="firstname" class="col-md-1 col-form-label">Όνομα</label>
+        <div>
+            <input type="text" class="form-control" name="firstname"
+                   id="firstname" placeholder="Enter firstname" value="@Model.StudentDto.Firstname" />
+        </div> 
+    </div>
+    <div class="row mb-3">
+        <label for="lastname" class="col-md-1 col-form-label">Επώνυμο</label>
+        <div>
+            <input type="text" class="form-control" name="lastname"
+                   id="lastname" placeholder="Enter lastname" value="@Model.StudentDto.Lastname" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="offset-md-1 col-md-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="offset-md-1 col-md-3 d-grid">
+            <a role="button" href="/Students/Index" class="btn btn-outline-primary">Cancel</a>
+        </div>
+    </div>
+
+</form>
+
